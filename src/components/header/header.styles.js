@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import * as color from '../../styles/colors.styles'
 
 export const HeaderContainer = styled.div`
   width: 100vw;
@@ -17,6 +18,9 @@ export const HeaderJumbotronContainer = styled.div`
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+  z-index: 100;
+  background-color: ${color.BLACK};
+  color: ${color.WHITE};
 `
 
 export const BackgroundImageContainer = styled.div`
@@ -25,16 +29,23 @@ export const BackgroundImageContainer = styled.div`
   right: 0;
   width: 100vw;
   height: 100vh;
+
   img {
     width: 100%;
     height: 100%;
+    object-fit: cover;
+    object-position: center bottom;
   }
 
   &::after {
-    content: '';
-    height: 100%;
+    content: ''; // ::before and ::after both require content
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    background-color: pink;
-    opacity: 0.5;
+    height: 100%;
+    background-color: #010101;
+    /* background-image: linear-gradient(120deg, #eaee44, #33d0ff); */
+    opacity: 0.9;
   }
 `

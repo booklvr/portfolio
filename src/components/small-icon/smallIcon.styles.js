@@ -18,6 +18,12 @@ const hamburgerMenuStyles = css`
   right: 10px;
 `
 
+const aboutButtonStyles = css`
+  position: fixed;
+  bottom: 60px;
+  right: 10px;
+`
+
 const getButtonStyles = ({ icon }) => {
   console.log('icon', icon)
   switch (icon) {
@@ -27,6 +33,8 @@ const getButtonStyles = ({ icon }) => {
       return contactButtonStyles
     case 'hamburger-menu':
       return hamburgerMenuStyles
+    case 'about':
+      return aboutButtonStyles
     default:
       return
   }
@@ -37,9 +45,10 @@ export const SmallIconContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 20px;
-  width: 20px;
-  background-color: darkgrey;
+  height: 3rem;
+  width: 3rem;
+  background-color: transparent;
+  z-index: 100;
   i {
     font-size: 20px;
     color: lightgrey;
