@@ -21,6 +21,8 @@ export const HeaderJumbotronContainer = styled.div`
   z-index: 100;
   background-color: ${color.BLACK};
   color: ${color.WHITE};
+  opacity: 0.5;
+  padding-bottom: 2rem;
 `
 
 export const BackgroundImageContainer = styled.div`
@@ -46,6 +48,6 @@ export const BackgroundImageContainer = styled.div`
     height: 100%;
     background-color: #010101;
     /* background-image: linear-gradient(120deg, #eaee44, #33d0ff); */
-    opacity: 0.9;
+    opacity: 0.85;
   }
 `

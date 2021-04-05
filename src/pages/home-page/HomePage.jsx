@@ -5,6 +5,7 @@ import Header from '../../components/header/Header'
 import SmallIcon from '../../components/small-icon/SmallIcon'
 import About from '../../components/about/About'
 import Skills from '../../components/skills/Skills'
+import Contact from '../../components/contact/Contact'
 
 // STYLES
 import { HomePageContainer } from './homePage.styles'
@@ -21,6 +22,7 @@ const HomePage = () => {
       <Header />
       <About />
       <Skills />
+      <Contact />
     </HomePageContainer>
   )
 }

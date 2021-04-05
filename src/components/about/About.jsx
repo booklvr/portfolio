@@ -31,7 +31,7 @@ const About = () => {
           create fun web games for my students as well as tools for my
           colleagues. My websites are being used by teachers all over the world.
           I have enjoyed working on these projects so much that I am now leaving
-          teaching to focus 100% of my time and energy into creating more
+          teaching to focus 100% of my time and energy into creating new
           innovative web solutions.
         </p>
         <p>
