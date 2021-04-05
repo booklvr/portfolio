@@ -49,6 +49,7 @@ export const SmallIconContainer = styled.div`
   width: 3rem;
   background-color: transparent;
   z-index: 100;
+  cursor: pointer;
   i {
     font-size: 20px;
     color: lightgrey;

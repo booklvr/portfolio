@@ -1,10 +1,12 @@
 import styled from 'styled-components'
 import * as color from '../../styles/colors.styles'
+import FormInput from '../form-input/FormInput'
 
 export const ContactContainer = styled.div`
   width: 100vw;
   height: 50vh;
-  background-color: ${color.BLACK};
+  background-color: green;
+  display: flex;
 `
 
 export const ContactTitleContainer = styled.div`
@@ -25,10 +27,13 @@ export const ContactTitleContainer = styled.div`
 export const ContactFormContainer = styled.div`
   width: 50vw;
   height: 100%;
+  padding: 3rem;
 `
 
-export const ContactForm = styled.form``
+export const ContactForm = styled.form`
+  width: 80%;
+`
 
-export const ContactFormInput = styled.input``
-
-export const ContactFormLabel = styled.label``
+export const ContactFormTextBox = styled(FormInput)`
+  height: 5rem;
+`
