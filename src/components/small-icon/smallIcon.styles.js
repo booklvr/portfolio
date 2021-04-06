@@ -55,5 +55,10 @@ export const SmallIconContainer = styled.div`
     color: lightgrey;
   }
 
+  img {
+    width: 2rem;
+    height: 2rem;
+  }
+
   ${getButtonStyles}
 `

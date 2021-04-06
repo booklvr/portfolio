@@ -34,7 +34,8 @@ export const AboutTextContainer = styled.div`
   color: ${color.WHITE};
 
   h2 {
-    font-size: 3.5rem;
+    font-size: 4rem;
+    font-weight: bold;
   }
 
   p {

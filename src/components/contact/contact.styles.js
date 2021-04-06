@@ -21,6 +21,7 @@ export const ContactTitleContainer = styled.div`
     color: ${color.WHITE};
     font-size: 4rem;
     margin: 0;
+    font-weight: bold;
   }
 `
 

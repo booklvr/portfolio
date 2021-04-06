@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components'
 import * as color from '../../styles/colors.styles'
 
 const shrinkLabelStyles = css`
-  top: -14px;
+  top: -18px;
   font-size: 12px;
   color: ${color.BLACK};
 `
@@ -53,5 +53,3 @@ export const FormInputLabel = styled.label`
     ${shrinkLabelStyles}
   }
 `
-
- 
