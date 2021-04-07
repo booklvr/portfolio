@@ -15,6 +15,7 @@ export const ProjectsContainer = styled.div`
     font-size: 4rem;
     font-weight: bold;
     color: ${color.BLACK};
+    margin: 3rem 0;
   }
 `
 

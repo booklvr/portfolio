@@ -12,4 +12,10 @@ export const CustomButtonContainer = styled.button`
   justify-content: center;
   align-items: center;
   font-weight: bolder;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+
+  transition: transform 0.3s ease;
 `

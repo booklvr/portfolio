@@ -3,7 +3,7 @@ const projectData = [
     title: 'Classpoint',
     url: 'https://classpoint.ca',
     github: 'https://github.com/booklvr/class_point',
-    gif: 'classpoint.gif',
+    gif: 'email-login.gif',
     info:
       'I created this website during the start of covid 19 to help teachers of keep track of points while they taught online.',
     icons: [
@@ -22,32 +22,34 @@ const projectData = [
     title: 'SpeedQuiz',
     url: 'https://speedquiz.classpoint.ca',
     github: 'https://github.com/booklvr/speedQuiz',
-    gif: '',
+    gif: 'email-login.gif',
     info:
       'SpeedQuiz is a web app for playing charades.  It is designed primarily to help teachers facilitate learning new vocabulary.',
     icons: [
       'javascript',
+      'react',
       'node',
       'mongodb',
       'html5',
       'sass',
       'passportjs',
       'babel',
-      'digital-ocean',
+      'digitalocean',
       'nginx',
       'pm2',
-      'lets-encrypt'
+      'lets-encrypt',
     ],
   },
   {
     title: 'Scategories',
     url: 'https://scategories.ca',
     github: 'https://github.com/booklvr/scategories',
-    gif: '',
+    gif: 'email-login.gif',
     info:
       'Scategories is an group language game.  Each team plays with the same list of letters and are presented with a new category each round.  They must try to write down a word that matches both the category and starts with their current letter, before the alloted time runs out.  The first team to write down a word for each letter, going from top to bottom, wins.',
     icons: [
       'javascript',
+      'react',
       'node',
       'mongodb',
       'html5',
@@ -57,14 +59,13 @@ const projectData = [
       'babel',
       'digitalocean',
       'redux',
-      
     ],
   },
   {
     title: 'ConnectFour',
     url: 'https://connectfour.classpoint.ca/',
     github: 'https://github.com/booklvr/connectfour',
-    gif: '',
+    gif: 'email-login.gif',
     info:
       'Connect four is a variation of the classic game connect four for use in the English classroom.  Before the game students review the target language with a picture associated with that target language.  During the game that same picture is placed at the bottom of each column.  Students pick the column by reciting the target language.',
     icons: [
