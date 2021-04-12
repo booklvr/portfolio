@@ -3,7 +3,7 @@ const projectData = [
     title: 'Classpoint',
     url: 'https://classpoint.ca',
     github: 'https://github.com/booklvr/class_point',
-    gif: 'email-login.gif',
+    gif: 'classpoint.gif',
     info:
       'I created this website during the start of covid 19 to help teachers of keep track of points while they taught online.',
     icons: [
@@ -44,7 +44,7 @@ const projectData = [
     title: 'Scategories',
     url: 'https://scategories.ca',
     github: 'https://github.com/booklvr/scategories',
-    gif: 'email-login.gif',
+    gif: 'scategories.gif',
     info:
       'Scategories is an group language game.  Each team plays with the same list of letters and are presented with a new category each round.  They must try to write down a word that matches both the category and starts with their current letter, before the alloted time runs out.  The first team to write down a word for each letter, going from top to bottom, wins.',
     icons: [
@@ -65,7 +65,7 @@ const projectData = [
     title: 'ConnectFour',
     url: 'https://connectfour.classpoint.ca/',
     github: 'https://github.com/booklvr/connectfour',
-    gif: 'email-login.gif',
+    gif: 'connectfour.gif',
     info:
       'Connect four is a variation of the classic game connect four for use in the English classroom.  Before the game students review the target language with a picture associated with that target language.  During the game that same picture is placed at the bottom of each column.  Students pick the column by reciting the target language.',
     icons: [

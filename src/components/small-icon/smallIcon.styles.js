@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components'
+import * as color from '../../styles/colors.styles'
 
 const scrollButtonStyles = css`
   bottom: 5px;
@@ -24,6 +25,14 @@ const aboutButtonStyles = css`
   right: 10px;
 `
 
+const expandButtonStyles = css`
+  color: ${color.WHITE};
+  cursor: pointer;
+  i {
+    color: white;
+  }
+`
+
 const getButtonStyles = ({ icon }) => {
   console.log('icon', icon)
   switch (icon) {
@@ -35,6 +44,8 @@ const getButtonStyles = ({ icon }) => {
       return hamburgerMenuStyles
     case 'about':
       return aboutButtonStyles
+    case 'expand':
+      return expandButtonStyles
     default:
       return
   }

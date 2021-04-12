@@ -26,6 +26,9 @@ const Card = ({ data: { title, url, github, gif, info, icons } }) => {
       <p>{info}</p>
       <ButtonsContainer>
         <CustomButton>CaseStudy</CustomButton>
+        <SmallIcon icon='expand'>
+          <i class='fas fa-expand'></i>
+        </SmallIcon>
         <CustomButton>Github</CustomButton>
       </ButtonsContainer>
       <IconsContainer>

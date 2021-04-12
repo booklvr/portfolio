@@ -19,10 +19,16 @@ export const HeaderJumbotronContainer = styled.div`
   justify-content: flex-start;
   align-items: center;
   z-index: 100;
-  background-color: ${color.BLACK};
+  background-color: ${color.WHITE};
   color: ${color.WHITE};
   opacity: 0.5;
   padding-bottom: 2rem;
+  box-shadow: 10px 10px 100px #fff;
+  border-radius: 10px;
+
+  h2 {
+    color: ${color.BLACK};
+  }
 `
 
 export const BackgroundImageContainer = styled.div`
