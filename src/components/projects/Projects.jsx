@@ -1,7 +1,5 @@
 import React from 'react'
 
-// gifs
-import ClassPointGif from '../../assets/gifs/classpoint.gif'
 
 import Card from '../card/Card'
 

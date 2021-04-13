@@ -1,6 +1,7 @@
 const projectData = [
   {
     title: 'Classpoint',
+    name: 'classpoint',
     url: 'https://classpoint.ca',
     github: 'https://github.com/booklvr/class_point',
     gif: 'classpoint.gif',
@@ -20,9 +21,10 @@ const projectData = [
   },
   {
     title: 'SpeedQuiz',
+    name: 'speedquiz',
     url: 'https://speedquiz.classpoint.ca',
     github: 'https://github.com/booklvr/speedQuiz',
-    gif: 'email-login.gif',
+    gif: 'speedquiz.gif',
     info:
       'SpeedQuiz is a web app for playing charades.  It is designed primarily to help teachers facilitate learning new vocabulary.',
     icons: [
@@ -42,6 +44,7 @@ const projectData = [
   },
   {
     title: 'Scategories',
+    name: 'scategories',
     url: 'https://scategories.ca',
     github: 'https://github.com/booklvr/scategories',
     gif: 'scategories.gif',
@@ -63,6 +66,7 @@ const projectData = [
   },
   {
     title: 'ConnectFour',
+    name: 'connectfour',
     url: 'https://connectfour.classpoint.ca/',
     github: 'https://github.com/booklvr/connectfour',
     gif: 'connectfour.gif',

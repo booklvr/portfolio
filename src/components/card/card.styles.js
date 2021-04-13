@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { FullScreen } from 'react-full-screen'
 
 import * as color from '../../styles/colors.styles'
 
@@ -12,7 +13,7 @@ export const ButtonsContainer = styled.div`
   justify-content: space-around;
   margin-bottom: 5rem;
 
-  transition: transform 350ms ease;
+  /* transition: transform 350ms ease; */
 `
 
 export const IconsContainer = styled.div`
@@ -34,6 +35,19 @@ export const IconsContainer = styled.div`
   }
 `
 
+export const FullScreenGif = styled.div`
+  width: 100%;
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+`
+
 export const GifContainer = styled.div`
   width: 100%;
   height: 100%;
@@ -42,7 +56,6 @@ export const GifContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  right: -100%;
   top: 0;
   opacity: 0;
 
@@ -54,7 +67,7 @@ export const GifContainer = styled.div`
   }
 `
 
-export const CardContainer = styled.div`
+export const CardContainer = styled(FullScreen)`
   width: 40rem;
   height: 30rem;
   position: relative;
@@ -83,9 +96,9 @@ export const CardContainer = styled.div`
     }
   }
 
-  &:hover ${ButtonsContainer} {
+  /* &:hover ${ButtonsContainer} {
     transform: translateY(4rem);
-  }
+  } */
 
   &:hover ${IconsContainer} {
     opacity: 0;
@@ -93,6 +106,13 @@ export const CardContainer = styled.div`
 
   &:hover ${GifContainer} {
     opacity: 1;
-    transform: translateX(-100%);
+  }
+`
+
+export const FullScreenContainer = styled(FullScreen)`
+  /* display: ${({ showFullScreen }) => (showFullScreen ? 'flex' : 'none')}; */
+
+  img {
+    object-fit: contain;
   }
 `
