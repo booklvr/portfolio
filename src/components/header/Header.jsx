@@ -3,7 +3,7 @@ import backgroundGif from '../../assets/city-scape.gif'
 
 // COMPONENTS
 import CustomButton from '../custom-button/CustomButton'
-import SmallIcon from '../small-icon/SmallIcon'
+import SmallIcon from '../icons/SmallIcon'
 
 import {
   HeaderContainer,

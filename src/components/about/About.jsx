@@ -1,8 +1,8 @@
 import React from 'react'
 
 import computerImage from '../../assets/computer.jpeg'
-import SmallIcon from '../small-icon/SmallIcon'
-import { SmallIconContainer } from '../small-icon/smallIcon.styles'
+import SmallIcon from '../icons/SmallIcon'
+import { SmallIconContainer } from '../icons/icon.styles'
 
 import {
   AboutContainer,

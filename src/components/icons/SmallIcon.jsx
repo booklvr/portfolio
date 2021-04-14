@@ -1,5 +1,5 @@
 import React from 'react'
-import { SmallIconContainer } from './smallIcon.styles'
+import { SmallIconContainer } from './icon.styles'
 
 
 const SmallIcon = ({children, ...props}) => {

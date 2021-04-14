@@ -2,7 +2,7 @@ import React from 'react'
 
 // Components
 import Header from '../../components/header/Header'
-import SmallIcon from '../../components/small-icon/SmallIcon'
+import SmallIcon from '../../components/icons/SmallIcon'
 import About from '../../components/about/About'
 import Projects from '../../components/projects/Projects'
 import Skills from '../../components/skills/Skills'

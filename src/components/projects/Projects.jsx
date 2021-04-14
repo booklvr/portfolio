@@ -13,6 +13,7 @@ import {
 } from './projects.styles'
 
 const Projects = () => {
+  
   return (
     <ProjectsContainer>
       <h2>PROJECTS</h2>

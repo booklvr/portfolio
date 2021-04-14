@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-import { FullScreen } from 'react-full-screen'
 
 import * as color from '../../styles/colors.styles'
 
@@ -35,19 +34,6 @@ export const IconsContainer = styled.div`
   }
 `
 
-export const FullScreenGif = styled.div`
-  width: 100%;
-  padding: 2rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  img {
-    width: 100%;
-    height: auto;
-  }
-`
-
 export const GifContainer = styled.div`
   width: 100%;
   height: 100%;
@@ -67,7 +53,7 @@ export const GifContainer = styled.div`
   }
 `
 
-export const CardContainer = styled(FullScreen)`
+export const CardContainer = styled.div`
   width: 40rem;
   height: 30rem;
   position: relative;
@@ -106,13 +92,5 @@ export const CardContainer = styled(FullScreen)`
 
   &:hover ${GifContainer} {
     opacity: 1;
-  }
-`
-
-export const FullScreenContainer = styled(FullScreen)`
-  /* display: ${({ showFullScreen }) => (showFullScreen ? 'flex' : 'none')}; */
-
-  img {
-    object-fit: contain;
   }
 `

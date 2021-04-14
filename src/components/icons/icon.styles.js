@@ -1,6 +1,11 @@
 import styled, { css } from 'styled-components'
 import * as color from '../../styles/colors.styles'
 
+const exitButtonStyles = css`
+  top: 10px;
+  right: 10px;
+`
+
 const scrollButtonStyles = css`
   bottom: 5px;
   left: 50%;
@@ -46,30 +51,47 @@ const getButtonStyles = ({ icon }) => {
       return aboutButtonStyles
     case 'expand':
       return expandButtonStyles
+    case 'exit':
+      return exitButtonStyles
     default:
       return
   }
 }
 
-export const SmallIconContainer = styled.div`
+export const IconContainer = styled.div`
   position: absolute;
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 3rem;
-  width: 3rem;
   background-color: transparent;
   z-index: 100;
   cursor: pointer;
   i {
-    font-size: 20px;
     color: lightgrey;
+  }
+
+  ${getButtonStyles}
+`
+
+export const SmallIconContainer = styled(IconContainer)`
+  height: 3rem;
+  width: 3rem;
+
+  i {
+    font-size: 20px;
   }
 
   img {
     width: 2rem;
     height: 2rem;
   }
+`
 
-  ${getButtonStyles}
+export const LargeIconContainer = styled(IconContainer)`
+  height: 5rem;
+  width: 5rem;
+
+  i {
+    font-size: 40px;
+  }
 `

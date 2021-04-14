@@ -1,32 +1,21 @@
-import React, { useCallback, useState } from 'react'
+import React from 'react'
+import {useHistory} from 'react-router-dom'
 import CustomButton from '../custom-button/CustomButton'
-import SmallIcon from '../small-icon/SmallIcon'
-import { useFullScreenHandle } from 'react-full-screen'
+import SmallIcon from '../icons/SmallIcon'
 
 import {
   ButtonsContainer,
   CardContainer,
   GifContainer,
   IconsContainer,
-  FullScreenContainer,
-  FullScreenGif,
 } from './card.styles'
 
-const Card = ({ data: { title, url, github, gif, info, icons } }) => {
-  // const [showFullScreen, setShowFullScreen] = useState(false)
-
-  const handle = useFullScreenHandle()
-
-  // const handleClick = () => {
-  //   console.log('clicked card')
-  // }
-
-  const handleHover = () => {
-    console.log('hover over card')
-  }
+const Card = ({ data: { title, name, url, github, gif, info, icons } }) => {
+  
+  const history = useHistory();
 
   return (
-    <CardContainer handle={handle}>
+    <CardContainer>
       <GifContainer>
         <img src={`${process.env.PUBLIC_URL}/assets/gif/${gif}`} alt={gif} />
       </GifContainer>
@@ -34,7 +23,7 @@ const Card = ({ data: { title, url, github, gif, info, icons } }) => {
       <p>{info}</p>
       <ButtonsContainer>
         <CustomButton>CaseStudy</CustomButton>
-        <SmallIcon onClick={handle.enter} icon='expand'>
+        <SmallIcon onClick={() => history.push(`/gif/${name}`)} icon='expand'>
           <i class='fas fa-expand'></i>
         </SmallIcon>
         <CustomButton>Github</CustomButton>
