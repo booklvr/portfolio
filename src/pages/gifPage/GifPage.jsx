@@ -1,9 +1,11 @@
 import React from 'react'
-import { GifPageContainer } from './gifPage.styles'
+import { GifPageContainer, GifButtonsContainer } from './gifPage.styles'
 import GifPlayer from 'react-gif-player'
+import './gifPlayer.styles.scss';
 
 // components
 import LargeIcon from '../../components/icons/LargeIcon'
+import CustomButton from '../../components/custom-button/CustomButton'
 
 const GifPage = ({match}) => {
   console.log('match.params.id', match.params.name)
@@ -18,7 +20,9 @@ const GifPage = ({match}) => {
       <GifPlayer 
         gif={`${process.env.PUBLIC_URL}/assets/gif/${match.params.name}.gif`} alt={match.params.name}
       />
-      
+      <GifButtonsContainer>
+        <CustomButton>Live Site</CustomButton>
+      </GifButtonsContainer>
 
     </GifPageContainer>
   )

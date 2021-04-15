@@ -1,0 +1,21 @@
+$gif_btn_bg_base_color: gold;
+$gif_btn_text_color: cornflowerblue;
+$gif_btn_font_family: serif;
+$gif_btn_text_content: 'Play';
+
+// Using webpack css/sass module import syntax
+@import '~react-gif-player/src/GifPlayer';
+
+// include other overrides afterward
+.gif_player {
+  display: block;
+  height: 100vh;
+  background-color: pink;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  img {
+    max-height: 75%;
+  }
+}
