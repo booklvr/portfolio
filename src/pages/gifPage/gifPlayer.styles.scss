@@ -1,21 +1,23 @@
-$gif_btn_bg_base_color: gold;
-$gif_btn_text_color: cornflowerblue;
-$gif_btn_font_family: serif;
-$gif_btn_text_content: 'Play';
+$gif_btn_bg_base_color: black;
+$gif_btn_text_color: white;
+$gif_btn_font_family: 'Roboto Slab', serif;
+$gif_btn_text_content: 'GIF';
+$gif_btn_border_style: solid !default;
 
 // Using webpack css/sass module import syntax
 @import '~react-gif-player/src/GifPlayer';
 
 // include other overrides afterward
 .gif_player {
-  display: block;
-  height: 100vh;
-  background-color: pink;
+  width: 100%;
+  max-width: 1450px;
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: pink;
+  border-radius: none;
 
   img {
-    max-height: 75%;
+    object-fit: cover;
   }
 }

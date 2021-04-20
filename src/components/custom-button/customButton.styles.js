@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export const CustomButtonContainer = styled.button`
   border: 1px solid black;
-  width: 9rem;
+  min-width: 9rem;
   height: 50px;
   padding: 0 1rem;
   font-size: 1rem;
