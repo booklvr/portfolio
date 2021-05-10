@@ -1,29 +1,39 @@
-import React from 'react'
-
+import React, { useEffect, forwardRef } from 'react'
 
 import Card from '../card/Card'
 
 // data
 import projectData from '../../data/project-data'
 
-import {
-  ProjectCard,
-  ProjectCardsContainer,
-  ProjectsContainer,
-} from './projects.styles'
+// HOOKS
+// import { useScroll } from '../../hooks/useScroll'
 
-const Projects = () => {
-  
+import { ProjectCardsContainer, ProjectsContainer } from './projects.styles'
+
+const Projects = forwardRef((props, ref) => {
+  // const ref = useRef(null)
+
+  const handleScroll = () => {
+    const bottomRef = ref.current.getBoundingClientRect().bottom
+    console.log('projectBottom', bottomRef)
+  }
+
+  // useEffect(() => {
+  //   window.addEventListener('scroll', handleScroll)
+
+  //   // return window.removeEventListener('scroll', handleScroll)
+  // })
+
   return (
-    <ProjectsContainer>
+    <ProjectsContainer ref={ref}>
       <h2>PROJECTS</h2>
       <ProjectCardsContainer>
-        {projectData.map((data) => (
-          <Card data={data}></Card>
+        {projectData.map((data, index) => (
+          <Card key={index} data={data}></Card>
         ))}
       </ProjectCardsContainer>
     </ProjectsContainer>
   )
-}
+})
 
 export default Projects

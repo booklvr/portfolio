@@ -11,33 +11,87 @@ import Contact from '../../components/contact/Contact'
 // STYLES
 import { HomePageContainer } from './homePage.styles'
 
+// HOOKS
+// import { useScroll } from '../../hooks/useScroll'
+
 const HomePage = () => {
   const header = useRef(null)
   const about = useRef(null)
-  // const projects = useRef(null)
-  // const skills = useRef(null)
-  // const contact = useRef(null)
+  const projects = useRef(null)
+  const skills = useRef(null)
+  const contact = useRef(null)
 
+  const [sectionRefs, setSectionRefs] = useState([
+    header,
+    about,
+    projects,
+    skills,
+    contact,
+  ])
   const [currentSection, setCurrentSection] = useState(0)
-  const [sectionRefs, setSectionRefs] = useState([])
+  const [scroll, setScroll] = useState({ y: 0, direction: '' })
+
+  const determineScrollDirection = () => {
+    setScroll((prev) => ({
+      y: -sectionRefs[currentSection].current.getBoundingClientRect().top,
+      direction:
+        prev.y >
+        -sectionRefs[currentSection].current.getBoundingClientRect().top
+          ? 'up'
+          : 'down',
+    }))
+  }
+
+  const handleScroll = () => {
+    determineScrollDirection()
+    console.log('scroll', scroll)
+
+    if (scroll.direction === 'up') {
+      if (
+        sectionRefs[currentSection].current.getBoundingClientRect().top <= 0
+      ) {
+        setCurrentSection((prev) => {
+          return currentSection - 1 <= 0 ? 0 : currentSection - 1
+        })
+      }
+    } else if (scroll.direction === 'down') {
+      if (
+        sectionRefs[currentSection].current.getBoundingClientRect().bottom < 0
+      )
+        setCurrentSection((prev) => {
+          return currentSection + 1 >= sectionRefs.length
+            ? sectionRefs.length - 1
+            : currentSection + 1
+        })
+    }
+
+    console.log('currentSection', currentSection)
+    console.log(sectionRefs[currentSection].current.getBoundingClientRect())
+
+    // setScroll((prev) => ({
+    //   y: -about.current.getBoundingClientRect().top,
+    //   // Here we’re comparing the previous state to the current state to get the scroll direction
+    //   direction:
+    //     prev.y > -about.current.getBoundingClientRect().top ? 'up' : 'down',
+    // }))
+
+    // console.log('scroll', scroll)
+  }
 
   useEffect(() => {
-    const handleScroll = () => {
-      if (
-        sectionRefs[currentSection].current.getBoundingClientReact().bottom < 0
-      ) {
-        console.log('bottom')
-      }
-    }
     window.addEventListener('scroll', handleScroll)
-    setSectionRefs([header, about])
-    return window.removeEventListener('scroll', handleScroll)
-  }, [])
+
+    return () => window.removeEventListener('scroll', handleScroll)
+  })
+
+  useEffect(() => {
+    console.log(currentSection, 'currentSection')
+  }, [currentSection])
 
   return (
     <HomePageContainer>
       <SmallIcon icon='hamburger-menu'>
-        <i class='fas fa-bars'></i>
+        <i className='fas fa-bars'></i>
       </SmallIcon>
 
       <SmallIcon icon='contact'>
@@ -45,9 +99,9 @@ const HomePage = () => {
       </SmallIcon>
       <Header ref={header} />
       <About ref={about} />
-      <Projects />
-      <Skills />
-      <Contact />
+      <Projects ref={projects} />
+      <Skills ref={skills} />
+      <Contact ref={contact} />
     </HomePageContainer>
   )
 }

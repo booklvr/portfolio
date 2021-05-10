@@ -1,8 +1,8 @@
-import React from 'react'
+import React, { forwardRef } from 'react'
 
 // SVGS
 import reactIcon from '../../assets/icons/react-icon.svg'
-import firebaseIcon from '../../assets/icons/firebase-icon.svg'
+// import firebaseIcon from '../../assets/icons/firebase-icon.svg'
 import html5Icon from '../../assets/icons/html5-icon.svg'
 import mongodbIcon from '../../assets/icons/mongodb-icon.svg'
 import css3Icon from '../../assets/icons/css3-icon.svg'
@@ -19,9 +19,9 @@ import {
   SkillsTitleContainer,
 } from './skills.styles'
 
-const Skills = () => {
+const Skills = forwardRef((props, ref) => {
   return (
-    <SkillsContainer>
+    <SkillsContainer ref={ref}>
       <SkillsTextAndTitleContainer>
         <SkillsTextContainer>
           <p>
@@ -59,6 +59,6 @@ const Skills = () => {
       </IconsContainer>
     </SkillsContainer>
   )
-}
+})
 
 export default Skills

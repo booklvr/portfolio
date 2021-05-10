@@ -1,5 +1,5 @@
 import React from 'react'
-import { useHistory, Link } from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
 import {
   GifPageContainer,
   GifButtonsContainer,
@@ -33,7 +33,7 @@ const GifPage = ({ match }) => {
         back
       </BackButton>
       <LargeIcon icon='exit'>
-        <i class='fas fa-times'></i>
+        <i className='fas fa-times'></i>
       </LargeIcon>
       <GifPlayer
         gif={`${process.env.PUBLIC_URL}/assets/gif/${match.params.name}.gif`}

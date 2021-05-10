@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { forwardRef } from 'react'
 import backgroundGif from '../../assets/city-scape.gif'
 
 // COMPONENTS
@@ -11,7 +11,7 @@ import {
   BackgroundImageContainer,
 } from './header.styles'
 
-const Header = React.forwardRef((props, ref) => {
+const Header = forwardRef((props, ref) => {
   return (
     <HeaderContainer ref={ref}>
       <BackgroundImageContainer>

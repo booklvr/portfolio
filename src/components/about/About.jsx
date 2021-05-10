@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, forwardRef, useState } from 'react'
 
 import computerImage from '../../assets/computer.jpeg'
 import SmallIcon from '../icons/SmallIcon'
@@ -10,7 +10,33 @@ import {
   AboutTextContainer,
 } from './about.styles'
 
-const About = React.forwardRef((props, ref) => {
+const About = forwardRef((props, ref) => {
+  // const ref = useRef(null)
+
+  const [scroll, setScroll] = useState({
+    y: 0,
+    direction: '',
+  })
+
+  const handleScroll = () => {
+    setScroll((prev) => ({
+      y: -ref.current.getBoundingClientRect().top,
+      // Here we’re comparing the previous state to the current state to get the scroll direction
+      direction:
+        prev.y > -ref.current.getBoundingClientRect().top ? 'up' : 'down',
+    }))
+
+    console.log('scroll', scroll)
+
+    const aboutTop = ref.current.getBoundingClientRect().top
+    console.log('aboutTop', aboutTop)
+  }
+
+  // useEffect(() => {
+  //   window.addEventListener('scroll', handleScroll)
+
+  //   return () => window.removeEventListener('scroll', handleScroll)
+  // })
   return (
     <AboutContainer ref={ref}>
       <AboutImageContainer>
