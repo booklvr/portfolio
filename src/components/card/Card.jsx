@@ -1,5 +1,5 @@
 import React from 'react'
-import {useHistory} from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
 import CustomButton from '../custom-button/CustomButton'
 import SmallIcon from '../icons/SmallIcon'
 
@@ -11,8 +11,7 @@ import {
 } from './card.styles'
 
 const Card = ({ data: { title, name, url, github, gif, info, icons } }) => {
-  
-  const history = useHistory();
+  const history = useHistory()
 
   return (
     <CardContainer>
@@ -24,10 +23,10 @@ const Card = ({ data: { title, name, url, github, gif, info, icons } }) => {
       <ButtonsContainer>
         <CustomButton>CaseStudy</CustomButton>
         <SmallIcon onClick={() => history.push(`/gif/${name}`)} icon='expand'>
-          <i class='fas fa-expand'></i>
+          <i className='fas fa-expand'></i>
         </SmallIcon>
         <CustomButton>Github</CustomButton>
-      </ButtonsContainer>
+      </ButtonsContainer> 
       <IconsContainer>
         {icons.map((icon, index) => (
           <img

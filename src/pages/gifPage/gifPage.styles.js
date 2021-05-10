@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import * as color from '../../styles/colors.styles'
+import CustomButton from '../../components/custom-button/CustomButton'
 
 export const GifPageContainer = styled.div`
   width: 100vw;
@@ -27,4 +28,11 @@ export const GifPageLink = styled.a`
   &:visted {
     text-decoration: none;
   }
+`
+
+export const BackButton = styled(CustomButton)`
+  position: fixed;
+  left: 10px;
+  top: 20px;
+  z-index: 100;
 `

@@ -10,9 +10,9 @@ import {
   AboutTextContainer,
 } from './about.styles'
 
-const About = () => {
+const About = React.forwardRef((props, ref) => {
   return (
-    <AboutContainer>
+    <AboutContainer ref={ref}>
       <AboutImageContainer>
         <img src={computerImage} alt='computer' />
       </AboutImageContainer>
@@ -40,13 +40,13 @@ const About = () => {
         </p>
       </AboutTextContainer>
       <SmallIcon icon='about'>
-        <i class='fas fa-address-card'></i>
+        <i className='fas fa-address-card'></i>
       </SmallIcon>
       <SmallIconContainer icon='scroll-down'>
         <i className='fas fa-arrow-down'></i>
       </SmallIconContainer>
     </AboutContainer>
   )
-}
+})
 
 export default About

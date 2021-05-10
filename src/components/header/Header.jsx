@@ -11,9 +11,9 @@ import {
   BackgroundImageContainer,
 } from './header.styles'
 
-const Header = () => {
+const Header = React.forwardRef((props, ref) => {
   return (
-    <HeaderContainer>
+    <HeaderContainer ref={ref}>
       <BackgroundImageContainer>
         <img src={backgroundGif} alt='city-scape'></img>
       </BackgroundImageContainer>
@@ -29,6 +29,6 @@ const Header = () => {
       </SmallIcon>
     </HeaderContainer>
   )
-}
+})
 
 export default Header

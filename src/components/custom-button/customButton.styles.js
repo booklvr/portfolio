@@ -1,4 +1,17 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
+import * as color from '../../styles/colors.styles'
+
+const smallButtonStyles = css`
+  border: none;
+  background-color: inherit;
+  color: ${color.WHITE};
+`
+
+const getButtonStyles = (props) => {
+  if (props.isSmallButton) {
+    return smallButtonStyles
+  }
+}
 
 export const CustomButtonContainer = styled.button`
   border: 1px solid black;
@@ -11,11 +24,14 @@ export const CustomButtonContainer = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
-  font-weight: bolder;
+  font-weight: bold;
+  background-color: ${color.WHITE};
 
   &:hover {
     transform: scale(1.1);
   }
 
   transition: transform 0.3s ease;
+
+  ${getButtonStyles}
 `

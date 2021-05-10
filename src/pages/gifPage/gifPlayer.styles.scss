@@ -1,7 +1,7 @@
 $gif_btn_bg_base_color: black;
 $gif_btn_text_color: white;
 $gif_btn_font_family: 'Roboto Slab', serif;
-$gif_btn_text_content: 'GIF';
+$gif_btn_text_content: 'PLAY';
 $gif_btn_border_style: solid !default;
 
 // Using webpack css/sass module import syntax
@@ -16,6 +16,18 @@ $gif_btn_border_style: solid !default;
   justify-content: center;
   background-color: pink;
   border-radius: none;
+  border: none;
+
+  .play_button {
+    border: none;
+    color: white;
+    background-color: black;
+    box-shadow: none;
+
+    &:hover {
+      box-shadow: none;
+    }
+  }
 
   img {
     object-fit: cover;

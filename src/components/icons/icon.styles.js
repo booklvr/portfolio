@@ -39,7 +39,7 @@ const expandButtonStyles = css`
 `
 
 const getButtonStyles = ({ icon }) => {
-  console.log('icon', icon)
+  // console.log('icon', icon)
   switch (icon) {
     case 'scroll-down':
       return scrollButtonStyles

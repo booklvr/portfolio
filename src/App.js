@@ -7,7 +7,7 @@ import GifPage from './pages/gifPage/GifPage'
 // import './App.css'
 
 // STYLES
-import { AppContainer } from './app.style'
+// import { AppContainer } from './app.style'
 
 function App() {
   return (

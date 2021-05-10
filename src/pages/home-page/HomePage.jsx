@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 
 // Components
 import Header from '../../components/header/Header'
@@ -12,16 +12,39 @@ import Contact from '../../components/contact/Contact'
 import { HomePageContainer } from './homePage.styles'
 
 const HomePage = () => {
+  const header = useRef(null)
+  const about = useRef(null)
+  // const projects = useRef(null)
+  // const skills = useRef(null)
+  // const contact = useRef(null)
+
+  const [currentSection, setCurrentSection] = useState(0)
+  const [sectionRefs, setSectionRefs] = useState([])
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (
+        sectionRefs[currentSection].current.getBoundingClientReact().bottom < 0
+      ) {
+        console.log('bottom')
+      }
+    }
+    window.addEventListener('scroll', handleScroll)
+    setSectionRefs([header, about])
+    return window.removeEventListener('scroll', handleScroll)
+  }, [])
+
   return (
     <HomePageContainer>
       <SmallIcon icon='hamburger-menu'>
         <i class='fas fa-bars'></i>
       </SmallIcon>
+
       <SmallIcon icon='contact'>
         <i className='far fa-envelope' />
       </SmallIcon>
-      <Header />
-      <About />
+      <Header ref={header} />
+      <About ref={about} />
       <Projects />
       <Skills />
       <Contact />
