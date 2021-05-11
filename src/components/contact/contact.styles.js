@@ -4,7 +4,7 @@ import FormInput from '../form-input/FormInput'
 
 export const ContactContainer = styled.div`
   width: 100vw;
-  height: 50vh;
+  height: 100vh;
   background-color: green;
   display: flex;
 `

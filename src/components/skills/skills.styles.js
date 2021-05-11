@@ -3,12 +3,12 @@ import * as color from '../../styles/colors.styles'
 
 export const SkillsContainer = styled.div`
   width: 100vw;
-  min-height: 50vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  background-color: ${color.WHITE};
+  background-color: ${color.BLACK};
 `
 
 export const SkillsTextAndTitleContainer = styled.div`
@@ -18,6 +18,7 @@ export const SkillsTextAndTitleContainer = styled.div`
   align-items: flex-start;
   justify-content: center;
   padding-top: 3rem;
+  color: ${color.WHITE};
 `
 
 export const SkillsTextContainer = styled.div`
@@ -28,6 +29,7 @@ export const SkillsTextContainer = styled.div`
 
   p {
     margin: 0;
+    color: ${color.WHITE};
   }
 `
 
