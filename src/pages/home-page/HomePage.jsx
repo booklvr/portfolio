@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react'
+import React, { useEffect, useState, useRef, Fragment } from 'react'
 import ReactFullpage from '@fullpage/react-fullpage'
 
 // Components
@@ -10,37 +10,79 @@ import Skills from '../../components/skills/Skills'
 import Contact from '../../components/contact/Contact'
 
 // STYLES
-import { HomePageContainer } from './homePage.styles'
+// import { HomePageContainer } from './homePage.styles'
 
-const HomePage = () => (
-  <ReactFullpage
-    //fullpage options
-    licenseKey={'YOUR_KEY_HERE'}
-    scrollingSpeed={1000} /* Options here */
-    render={({ state, fullpageApi }) => {
-      return (
-        <ReactFullpage.Wrapper>
-          <div className='section'>
-            <Header></Header>
-          </div>
-          <div className='section'>
-            <About></About>
-          </div>
-          <div className='section'>
-            <Projects></Projects>
-          </div>
-          <div className='section'>
-            <Skills></Skills>
-          </div>
-          <div className='section'>
-            <Contact></Contact>
-          </div>
-        </ReactFullpage.Wrapper>
-      )
-    }}
-  />
-)
+const HomePage = () => {
 
+  const onLeave = (origin, destination, direction) => {
+    console.log("Leaving section", origin.index);
+    console.log('Leave direction', direction)
+    if (destination.anchor === 'projects') {
+      console.log('origin', origin)
+      console.log('destination', destination)
+      console.log('direction', direction)
+    }
+  }
+
+  const afterLoad = ( origin, destination, direction) => {
+    // console.log('loaded section', destination.index)  
+    // if (destination.anchor === 'projects') {
+    //   console.log('we have entered the projects section')
+    // }
+  }
+
+  const afterSlideLoad = (origin, destination, direction, section) => {
+    // console.log("Leaving section", origin.index);
+    // console.log('Leave direction', direction)
+    // console.log('section', section)
+  }
+
+  return (
+    <Fragment>
+      <SmallIcon icon='hamburger-menu' id="icon1">
+          <i className='fas fa-bars'></i>
+        </SmallIcon>
+        <ReactFullpage
+        //fullpage options
+        licenseKey={'YOUR_KEY_HERE'}
+        scrollingSpeed={1000} /* Options here */
+        anchors={['header', 'about', 'projects', 'skills', 'contact']}
+        scrollOverflow={true}
+        scrollOverflowReset={true}
+        resetSliders={true}
+        onLeave={onLeave}
+        afterLoad={afterLoad}
+        afterSlideLoad={afterSlideLoad}
+        render={({ state, fullpageApi }) => {
+          return (
+            <ReactFullpage.Wrapper>
+              
+              <div className='section'>
+                <Header></Header>
+              </div>
+              <div className='section'>
+                <About></About>
+              </div>
+              <div className='section'>
+                <div className="slide active" data-anchor="slide1"><Projects/></div>
+                <div className="slide" data-anchor="slide2">content2
+                  <button onClick={() => fullpageApi.moveTo('header', 1)}>move to top</button>
+                </div>
+                
+              </div>
+              <div className='section'>
+                <Skills></Skills>
+              </div>
+              <div className='section'>
+                <Contact></Contact>
+              </div>
+            </ReactFullpage.Wrapper>
+          )
+        }}
+      />
+    </Fragment>
+  ) 
+}
 // HOOKS
 // import { useScroll } from '../../hooks/useScroll'
 
