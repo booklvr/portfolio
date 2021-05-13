@@ -8,6 +8,10 @@ import About from '../../components/about/About'
 import Projects from '../../components/projects/Projects'
 import Skills from '../../components/skills/Skills'
 import Contact from '../../components/contact/Contact'
+import GifPage from '../gifPage/GifPage'
+
+// DATA
+import projectData from '../../data/project-data'
 
 // STYLES
 // import { HomePageContainer } from './homePage.styles'
@@ -37,6 +41,13 @@ const HomePage = () => {
     // console.log('section', section)
   }
 
+  useEffect(() => {
+    projectData.forEach((project) => {
+      console.log(project.name)
+    })
+  }, [])
+
+
   return (
     <Fragment>
       <SmallIcon icon='hamburger-menu' id="icon1">
@@ -50,6 +61,7 @@ const HomePage = () => {
         scrollOverflow={true}
         scrollOverflowReset={true}
         resetSliders={true}
+        controlArrows={false}
         onLeave={onLeave}
         afterLoad={afterLoad}
         afterSlideLoad={afterSlideLoad}
@@ -64,10 +76,14 @@ const HomePage = () => {
                 <About></About>
               </div>
               <div className='section'>
-                <div className="slide active" data-anchor="slide1"><Projects/></div>
-                <div className="slide" data-anchor="slide2">content2
-                  <button onClick={() => fullpageApi.moveTo('header', 1)}>move to top</button>
-                </div>
+                <div className='slide' data-anchor='projects'><Projects fullpageApi={fullpageApi}/></div>
+                
+                {projectData.map((project, index) => (
+                  <div key={index} className="slide" data-anchor={`slide${index + 3}`}>
+                    <GifPage project={project}/>
+                  </div>
+
+                ))}
                 
               </div>
               <div className='section'>

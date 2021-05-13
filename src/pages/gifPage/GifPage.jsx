@@ -4,7 +4,7 @@ import {
   GifPageContainer,
   GifButtonsContainer,
   GifPageLink,
-  BackButton,
+  
 } from './gifPage.styles'
 import GifPlayer from 'react-gif-player'
 import './gifPlayer.styles.scss'
@@ -14,38 +14,38 @@ import LargeIcon from '../../components/icons/LargeIcon'
 import projectData from '../../data/project-data'
 import CustomButton from '../../components/custom-button/CustomButton'
 
-const GifPage = ({ match }) => {
-  const history = useHistory()
-  // console.log('match.params.name', match.params.name)
+const GifPage = ({ project }) => {
+  // const history = useHistory()
+  // // console.log('match.params.name', match.params.name)
 
-  const pageData = projectData.filter(
-    (data) => data.name === match.params.name
-  )[0]
-  // console.log(pageData)
+  // const pageData = projectData.filter(
+  //   (data) => data.name === match.params.name
+  // )[0]
+  // // console.log(pageData)
 
-  const handleGoBack = () => {
-    history.goBack()
-  }
+  // const handleGoBack = () => {
+  //   history.goBack()
+  // }
 
   return (
     <GifPageContainer>
-      <BackButton isSmallButton={true} onClick={() => handleGoBack()}>
+      {/* <BackButton isSmallButton={true} onClick={() => handleGoBack()}>
         back
-      </BackButton>
+      </BackButton> */}
       <LargeIcon icon='exit'>
         <i className='fas fa-times'></i>
       </LargeIcon>
       <GifPlayer
-        gif={`${process.env.PUBLIC_URL}/assets/gif/${match.params.name}.gif`}
-        alt={match.params.name}
+        gif={`${process.env.PUBLIC_URL}/assets/gif/${project.name}.gif`}
+        alt={project.name}
       />
       <GifButtonsContainer>
-        <GifPageLink target='_blank' href={pageData.url}>
+        <GifPageLink target='_blank' href={project.url}>
           <CustomButton>Live Site</CustomButton>
         </GifPageLink>
 
         <CustomButton>Case Study</CustomButton>
-        <GifPageLink href={pageData.github} target='_blank'>
+        <GifPageLink href={project.github} target='_blank'>
           <CustomButton>Github</CustomButton>
         </GifPageLink>
       </GifButtonsContainer>

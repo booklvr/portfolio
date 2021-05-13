@@ -12,6 +12,7 @@ import { ProjectCardsContainer, ProjectsContainer } from './projects.styles'
 
 const Projects = forwardRef((props, ref) => {
   // const ref = useRef(null)
+  const {fullpageApi } = props;
 
   const handleScroll = () => {
     const bottomRef = ref.current.getBoundingClientRect().bottom
@@ -27,9 +28,9 @@ const Projects = forwardRef((props, ref) => {
   return (
     <ProjectsContainer ref={ref}>
       <h2>PROJECTS</h2>
-      <ProjectCardsContainer>
+      <ProjectCardsContainer >
         {projectData.map((data, index) => (
-          <Card key={index} data={data}></Card>
+          <Card key={index} data={data} onClick={() => fullpageApi.moveTo('projects', 3)}></Card>
         ))}
       </ProjectCardsContainer>
     </ProjectsContainer>
