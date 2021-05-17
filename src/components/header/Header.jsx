@@ -1,4 +1,4 @@
-import React, { forwardRef } from 'react'
+import React from 'react'
 import backgroundGif from '../../assets/city-scape.gif'
 
 // COMPONENTS
@@ -11,9 +11,10 @@ import {
   BackgroundImageContainer,
 } from './header.styles'
 
-const Header = forwardRef((props, ref) => {
+const Header = ({ fullpageApi }) => {
+  
   return (
-    <HeaderContainer ref={ref}>
+    <HeaderContainer>
       <BackgroundImageContainer>
         <img src={backgroundGif} alt='city-scape'></img>
       </BackgroundImageContainer>
@@ -24,11 +25,14 @@ const Header = forwardRef((props, ref) => {
           Contact <i className='far fa-envelope'></i>
         </CustomButton>
       </HeaderJumbotronContainer>
-      <SmallIcon icon='scroll-down'>
+      <SmallIcon
+        icon='scroll-down'
+        onClick={() => fullpageApi.moveSectionDown()}
+      >
         <i className='fas fa-arrow-down'></i>
       </SmallIcon>
     </HeaderContainer>
   )
-})
+}
 
 export default Header

@@ -1,4 +1,4 @@
-import React, { forwardRef } from 'react'
+import React from 'react'
 
 // SVGS
 import reactIcon from '../../assets/icons/react-icon.svg'
@@ -10,6 +10,11 @@ import sassIcon from '../../assets/icons/sass-icon.svg'
 import nodeIcon from '../../assets/icons/node-icon.svg'
 import javascriptIcon from '../../assets/icons/javascript-icon.svg'
 
+// COMPONENTS
+import Heading from '../../components/heading/Heading'
+
+import { SmallIconContainer } from '../icons/icon.styles'
+
 import {
   IconContainer,
   IconsContainer,
@@ -19,9 +24,9 @@ import {
   SkillsTitleContainer,
 } from './skills.styles'
 
-const Skills = forwardRef((props, ref) => {
+const Skills = ({ fullpageApi }) => {
   return (
-    <SkillsContainer ref={ref}>
+    <SkillsContainer>
       <SkillsTextAndTitleContainer>
         <SkillsTextContainer>
           <p>
@@ -31,7 +36,7 @@ const Skills = forwardRef((props, ref) => {
           </p>
         </SkillsTextContainer>
         <SkillsTitleContainer>
-          <h2>SKILLS</h2>
+          <Heading>skills</Heading>
         </SkillsTitleContainer>
       </SkillsTextAndTitleContainer>
       <IconsContainer>
@@ -57,8 +62,14 @@ const Skills = forwardRef((props, ref) => {
           <img src={css3Icon} alt='css3 icon' />
         </IconContainer>
       </IconsContainer>
+      <SmallIconContainer
+        icon='scroll-down'
+        onClick={() => fullpageApi.moveSectionDown()}
+      >
+        <i className='fas fa-arrow-down'></i>
+      </SmallIconContainer>
     </SkillsContainer>
   )
-})
+}
 
 export default Skills

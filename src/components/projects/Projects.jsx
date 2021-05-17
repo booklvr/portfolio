@@ -1,40 +1,38 @@
-import React, { useEffect, forwardRef } from 'react'
+import React from 'react'
 
 import Card from '../card/Card'
 
 // data
 import projectData from '../../data/project-data'
 
-// HOOKS
-// import { useScroll } from '../../hooks/useScroll'
+// Components
+import { SmallIconContainer } from '../icons/icon.styles'
+import Heading from '../../components/heading/Heading'
 
 import { ProjectCardsContainer, ProjectsContainer } from './projects.styles'
 
-const Projects = forwardRef((props, ref) => {
-  // const ref = useRef(null)
-  const {fullpageApi } = props;
-
-  const handleScroll = () => {
-    const bottomRef = ref.current.getBoundingClientRect().bottom
-    console.log('projectBottom', bottomRef)
-  }
-
-  // useEffect(() => {
-  //   window.addEventListener('scroll', handleScroll)
-
-  //   // return window.removeEventListener('scroll', handleScroll)
-  // })
-
+const Projects = ({ fullpageApi }) => {
   return (
-    <ProjectsContainer ref={ref}>
-      <h2>PROJECTS</h2>
-      <ProjectCardsContainer >
+    <ProjectsContainer>
+      <Heading>projects</Heading>
+      <ProjectCardsContainer>
         {projectData.map((data, index) => (
-          <Card key={index} data={data} onClick={() => fullpageApi.moveTo('projects', 3)}></Card>
+          <Card
+            key={index}
+            data={data}
+            onClick={() => fullpageApi.moveTo('projects', 3)}
+          ></Card>
         ))}
       </ProjectCardsContainer>
+      <SmallIconContainer
+        icon='scroll-down'
+        inverted='true'
+        onClick={() => fullpageApi.moveSectionDown()}
+      >
+        <i className='fas fa-arrow-down'></i>
+      </SmallIconContainer>
     </ProjectsContainer>
   )
-})
+}
 
 export default Projects

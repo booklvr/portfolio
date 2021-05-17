@@ -17,9 +17,8 @@ import projectData from '../../data/project-data'
 // import { HomePageContainer } from './homePage.styles'
 
 const HomePage = () => {
-
   const onLeave = (origin, destination, direction) => {
-    console.log("Leaving section", origin.index);
+    console.log('Leaving section', origin.index)
     console.log('Leave direction', direction)
     if (destination.anchor === 'projects') {
       console.log('origin', origin)
@@ -28,8 +27,8 @@ const HomePage = () => {
     }
   }
 
-  const afterLoad = ( origin, destination, direction) => {
-    // console.log('loaded section', destination.index)  
+  const afterLoad = (origin, destination, direction) => {
+    // console.log('loaded section', destination.index)
     // if (destination.anchor === 'projects') {
     //   console.log('we have entered the projects section')
     // }
@@ -47,15 +46,14 @@ const HomePage = () => {
     })
   }, [])
 
-
   return (
     <Fragment>
-      <SmallIcon icon='hamburger-menu' id="icon1">
-          <i className='fas fa-bars'></i>
-        </SmallIcon>
-        <ReactFullpage
+      <SmallIcon icon='hamburger-menu' id='icon1'>
+        <i className='fas fa-bars'></i>
+      </SmallIcon>
+      <ReactFullpage
         //fullpage options
-        licenseKey={'YOUR_KEY_HERE'}
+        licenseKey={'OPEN-SOURCE-GPLV3-LICENSE'}
         scrollingSpeed={1000} /* Options here */
         anchors={['header', 'about', 'projects', 'skills', 'contact']}
         scrollOverflow={true}
@@ -68,26 +66,29 @@ const HomePage = () => {
         render={({ state, fullpageApi }) => {
           return (
             <ReactFullpage.Wrapper>
-              
-              <div className='section'>
-                <Header></Header>
+              <div className='section' fullpageApi={fullpageApi}>
+                <Header fullpageApi={fullpageApi}></Header>
               </div>
-              <div className='section'>
-                <About></About>
+              <div className='section' fullpageApi={fullpageApi}>
+                <About fullpageApi={fullpageApi}></About>
               </div>
-              <div className='section'>
-                <div className='slide' data-anchor='projects'><Projects fullpageApi={fullpageApi}/></div>
-                
-                {projectData.map((project, index) => (
-                  <div key={index} className="slide" data-anchor={`slide${index + 3}`}>
-                    <GifPage project={project}/>
-                  </div>
+              <div className='section' fullpageApi={fullpageApi}>
+                <div className='slide' data-anchor='projects'>
+                  <Projects fullpageApi={fullpageApi} />
+                </div>
 
+                {projectData.map((project, index) => (
+                  <div
+                    key={index}
+                    className='slide'
+                    data-anchor={`slide${index + 3}`}
+                  >
+                    <GifPage project={project} />
+                  </div>
                 ))}
-                
               </div>
-              <div className='section'>
-                <Skills></Skills>
+              <div className='section' fullpageApi={fullpageApi}>
+                <Skills fullpageApi={fullpageApi}></Skills>
               </div>
               <div className='section'>
                 <Contact></Contact>
@@ -97,7 +98,7 @@ const HomePage = () => {
         }}
       />
     </Fragment>
-  ) 
+  )
 }
 // HOOKS
 // import { useScroll } from '../../hooks/useScroll'

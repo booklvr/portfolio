@@ -4,18 +4,17 @@ import * as color from '../../styles/colors.styles'
 
 export const ProjectsContainer = styled.div`
   width: 100vw;
-  min-height: 100vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
   background-color: ${color.WHITE};
+  overflow-y: scroll;
+  overflow-x: hidden;
 
-  h2 {
-    font-size: 4rem;
-    font-weight: bold;
-    color: ${color.BLACK};
-    margin: 3rem 0;
+  @media (max-width: 768px) {
+    background-color: pink;
   }
 `
 

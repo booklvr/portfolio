@@ -25,6 +25,10 @@ export const IconsContainer = styled.div`
   opacity: 1;
   transition: opacity 250ms ease;
 
+  @media (max-width: 1360px) {
+    display: none;
+  }
+
   img {
     width: 3rem;
     height: 3rem;
@@ -51,11 +55,15 @@ export const GifContainer = styled.div`
     width: 90%;
     height: auto;
   }
+
+  @media (max-width: 500px) {
+    display: none;
+  }
 `
 
 export const CardContainer = styled.div`
   width: 40rem;
-  height: 30rem;
+  height: 20rem;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -82,9 +90,9 @@ export const CardContainer = styled.div`
     }
   }
 
-  /* &:hover ${ButtonsContainer} {
+  &:hover ${ButtonsContainer} {
     transform: translateY(4rem);
-  } */
+  }
 
   &:hover ${IconsContainer} {
     opacity: 0;
@@ -92,5 +100,22 @@ export const CardContainer = styled.div`
 
   &:hover ${GifContainer} {
     opacity: 1;
+  }
+
+  @media (max-width: 1360px) {
+    background-color: red;
+    width: 35rem;
+  }
+
+  @media (max-width: 1200px) {
+    width: 30rem;
+  }
+
+  @media (max-width: 1000px) {
+    width: 25rem;
+  }
+
+  @media (max-width: 500px) {
+    height: 10rem;
   }
 `

@@ -1,8 +1,10 @@
-import React, { useEffect, forwardRef, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 import computerImage from '../../assets/computer.jpeg'
 import SmallIcon from '../icons/SmallIcon'
 import { SmallIconContainer } from '../icons/icon.styles'
+
+import Heading from '../../components/heading/Heading'
 
 import {
   AboutContainer,
@@ -10,27 +12,25 @@ import {
   AboutTextContainer,
 } from './about.styles'
 
-const About = forwardRef((props, ref) => {
-  // const ref = useRef(null)
+const About = ({ fullpageApi }) => {
+  // const [scroll, setScroll] = useState({
+  //   y: 0,
+  //   direction: '',
+  // })
 
-  const [scroll, setScroll] = useState({
-    y: 0,
-    direction: '',
-  })
+  // const handleScroll = () => {
+  //   setScroll((prev) => ({
+  //     y: -ref.current.getBoundingClientRect().top,
+  //     // Here we’re comparing the previous state to the current state to get the scroll direction
+  //     direction:
+  //       prev.y > -ref.current.getBoundingClientRect().top ? 'up' : 'down',
+  //   }))
 
-  const handleScroll = () => {
-    setScroll((prev) => ({
-      y: -ref.current.getBoundingClientRect().top,
-      // Here we’re comparing the previous state to the current state to get the scroll direction
-      direction:
-        prev.y > -ref.current.getBoundingClientRect().top ? 'up' : 'down',
-    }))
+  //   console.log('scroll', scroll)
 
-    console.log('scroll', scroll)
-
-    const aboutTop = ref.current.getBoundingClientRect().top
-    console.log('aboutTop', aboutTop)
-  }
+  //   const aboutTop = ref.current.getBoundingClientRect().top
+  //   console.log('aboutTop', aboutTop)
+  // }
 
   // useEffect(() => {
   //   window.addEventListener('scroll', handleScroll)
@@ -38,12 +38,12 @@ const About = forwardRef((props, ref) => {
   //   return () => window.removeEventListener('scroll', handleScroll)
   // })
   return (
-    <AboutContainer ref={ref}>
+    <AboutContainer>
       <AboutImageContainer>
         <img src={computerImage} alt='computer' />
       </AboutImageContainer>
       <AboutTextContainer>
-        <h2>ABOUT ME</h2>
+        <Heading>about me</Heading>
         <p>
           My name is Nick de Waal and I am a full stack developer currently
           located in Korea with plans to move to Vancouver, British Columbia
@@ -68,11 +68,14 @@ const About = forwardRef((props, ref) => {
       <SmallIcon icon='about'>
         <i className='fas fa-address-card'></i>
       </SmallIcon>
-      <SmallIconContainer icon='scroll-down'>
+      <SmallIconContainer
+        icon='scroll-down'
+        onClick={() => fullpageApi.moveSectionDown()}
+      >
         <i className='fas fa-arrow-down'></i>
       </SmallIconContainer>
     </AboutContainer>
   )
-})
+}
 
 export default About

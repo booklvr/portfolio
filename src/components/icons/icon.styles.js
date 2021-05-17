@@ -67,13 +67,14 @@ export const IconContainer = styled.div`
   z-index: 100;
   cursor: pointer;
   i {
-    color: lightgrey;
+    color: ${(props) => (props.inverted ? color.BLACK : color.WHITE)};
   }
 
   ${getButtonStyles}
 `
 
 export const SmallIconContainer = styled(IconContainer)`
+  z-index: 100;
   height: 3rem;
   width: 3rem;
 

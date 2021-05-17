@@ -3,6 +3,7 @@ import React, { useState, forwardRef } from 'react'
 // COMPONENTS
 import FormInput from '../form-input/FormInput'
 import FormTextBox from '../form-text-box/FormTextBox'
+import Heading from '../heading/Heading'
 
 import {
   ContactContainer,
