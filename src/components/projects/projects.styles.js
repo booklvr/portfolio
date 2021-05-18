@@ -12,10 +12,7 @@ export const ProjectsContainer = styled.div`
   background-color: ${color.WHITE};
   overflow-y: scroll;
   overflow-x: hidden;
-
-  @media (max-width: 768px) {
-    background-color: pink;
-  }
+  position: relative;
 `
 
 export const ProjectCardsContainer = styled.div`
@@ -25,4 +22,11 @@ export const ProjectCardsContainer = styled.div`
   align-items: center;
   justify-content: space-around;
   flex-wrap: wrap;
+
+  @media (max-width: 1000px) {
+    height: 90%;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: space-around;
+  }
 `

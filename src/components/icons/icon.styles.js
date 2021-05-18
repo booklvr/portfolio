@@ -38,6 +38,12 @@ const expandButtonStyles = css`
   }
 `
 
+const githubButtonStyles = css`
+  position: absolute;
+  bottom: 0;
+  right: 0;
+`
+
 const getButtonStyles = ({ icon }) => {
   // console.log('icon', icon)
   switch (icon) {
@@ -53,6 +59,8 @@ const getButtonStyles = ({ icon }) => {
       return expandButtonStyles
     case 'exit':
       return exitButtonStyles
+    case 'github':
+      return githubButtonStyles
     default:
       return
   }

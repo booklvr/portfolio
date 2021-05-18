@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 
 import * as color from '../../styles/colors.styles'
+import * as font from '../../styles/fonts.styles'
 
 export const ButtonsContainer = styled.div`
   width: 100%;
@@ -13,6 +14,12 @@ export const ButtonsContainer = styled.div`
   margin-bottom: 5rem;
 
   /* transition: transform 350ms ease; */
+`
+
+export const CardTitle = styled.h3`
+  font-family: ${font.FONT_MAIN};
+  text-transform: uppercase;
+  padding-left: 0.5rem;
 `
 
 export const IconsContainer = styled.div`
@@ -61,6 +68,46 @@ export const GifContainer = styled.div`
   }
 `
 
+export const SmallCard = styled.div`
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  overflow-y: hidden;
+
+  a {
+    width: 50%;
+
+    img {
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+`
+
+export const SmallCardRight = styled.div`
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 50%;
+
+  img {
+    object-fit: none;
+    height: 100%;
+    padding: 0.5rem;
+  }
+`
+
+export const SmallCardButton = styled.div`
+  padding-left: 0.5rem;
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+
+  &:hover {
+    transform: translateX(2px) scale(1.1);
+  }
+`
+
 export const CardContainer = styled.div`
   width: 40rem;
   height: 20rem;
@@ -103,7 +150,6 @@ export const CardContainer = styled.div`
   }
 
   @media (max-width: 1360px) {
-    background-color: red;
     width: 35rem;
   }
 
@@ -116,6 +162,6 @@ export const CardContainer = styled.div`
   }
 
   @media (max-width: 500px) {
-    height: 10rem;
+    height: 7rem;
   }
 `
