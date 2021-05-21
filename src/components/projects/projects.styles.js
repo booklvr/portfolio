@@ -13,10 +13,11 @@ export const ProjectsContainer = styled.div`
   overflow-y: scroll;
   overflow-x: hidden;
   position: relative;
+  padding: 0 2rem;
 `
 
 export const ProjectCardsContainer = styled.div`
-  width: 100vw;
+  width: 100%;
   display: flex;
   flex-direction: row;
   align-items: center;

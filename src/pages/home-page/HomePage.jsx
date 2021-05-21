@@ -9,6 +9,8 @@ import Projects from '../../components/projects/Projects'
 import Skills from '../../components/skills/Skills'
 import Contact from '../../components/contact/Contact'
 import GifPage from '../gifPage/GifPage'
+import FullPageNavigation from '../../components/fullpage-navigation/FullPageNavigation'
+
 
 // DATA
 import projectData from '../../data/project-data'
@@ -51,6 +53,7 @@ const HomePage = () => {
       <SmallIcon icon='hamburger-menu' id='icon1'>
         <i className='fas fa-bars'></i>
       </SmallIcon>
+      {/* <FullPageNavigation/> */}
       <ReactFullpage
         //fullpage options
         licenseKey={'OPEN-SOURCE-GPLV3-LICENSE'}
@@ -63,6 +66,7 @@ const HomePage = () => {
         onLeave={onLeave}
         afterLoad={afterLoad}
         afterSlideLoad={afterSlideLoad}
+        navigation={true}
         render={({ state, fullpageApi }) => {
           return (
             <ReactFullpage.Wrapper>

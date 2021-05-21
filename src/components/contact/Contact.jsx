@@ -1,4 +1,4 @@
-import React, { useState, forwardRef } from 'react'
+import React, { useState } from 'react'
 
 // COMPONENTS
 import FormInput from '../form-input/FormInput'
@@ -12,13 +12,13 @@ import {
   ContactTitleContainer,
 } from './contact.styles'
 
-const Contact = forwardRef((props, ref) => {
+const Contact = () => {
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [message, setMessage] = useState('')
 
   return (
-    <ContactContainer ref={ref}>
+    <ContactContainer>
       <ContactTitleContainer>
         <h2>Let's</h2>
         <h2>Work</h2>
@@ -56,6 +56,6 @@ const Contact = forwardRef((props, ref) => {
       </ContactFormContainer>
     </ContactContainer>
   )
-})
+}
 
 export default Contact

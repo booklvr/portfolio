@@ -109,7 +109,7 @@ export const SmallCardButton = styled.div`
 `
 
 export const CardContainer = styled.div`
-  width: 40rem;
+  max-width: 40rem;
   height: 20rem;
   position: relative;
   display: flex;

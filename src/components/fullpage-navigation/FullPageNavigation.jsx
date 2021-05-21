@@ -3,6 +3,7 @@ import React from 'react'
 import {
   FullPageNavigationContainer,
   FullPageNavigationListItem,
+  FullPageNavigationList
 } from './fullPageNavigation.styles'
 
 const FullPageNavigation = ({ fullpageApi }) => {
@@ -10,14 +11,14 @@ const FullPageNavigation = ({ fullpageApi }) => {
 
   return (
     <FullPageNavigationContainer>
-      <ul>
+      <FullPageNavigationList>
         {sections.map((section, index) => (
           <FullPageNavigationListItem>
-            <span></span>
+            <a></a>
             <div>{section}</div>
           </FullPageNavigationListItem>
         ))}
-      </ul>
+      </FullPageNavigationList>
     </FullPageNavigationContainer>
   )
 }

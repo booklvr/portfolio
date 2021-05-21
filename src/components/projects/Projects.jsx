@@ -8,14 +8,12 @@ import projectData from '../../data/project-data'
 // Components
 import { SmallIconContainer } from '../icons/icon.styles'
 import Heading from '../../components/heading/Heading'
-import FullPageNavigation from '../fullpage-navigation/FullPageNavigation'
 
 import { ProjectCardsContainer, ProjectsContainer } from './projects.styles'
 
 const Projects = ({ fullpageApi }) => {
   return (
     <ProjectsContainer>
-      <FullPageNavigation></FullPageNavigation>
       <Heading>projects</Heading>
       <ProjectCardsContainer>
         {projectData.map((data, index) => (

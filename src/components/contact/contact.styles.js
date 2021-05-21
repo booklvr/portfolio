@@ -7,15 +7,25 @@ export const ContactContainer = styled.div`
   height: 100vh;
   background-color: green;
   display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  @media (max-width: 1000px) {
+    flex-direction: column;
+    justify-content: center;
+  }
 `
 
 export const ContactTitleContainer = styled.div`
   width: 50vw;
-  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-end;
+
+  @media (max-width: 1000px) {
+    align-items: center;
+  }
 
   h2 {
     color: ${color.WHITE};
@@ -27,7 +37,6 @@ export const ContactTitleContainer = styled.div`
 
 export const ContactFormContainer = styled.div`
   width: 50vw;
-  height: 100%;
   padding: 3rem;
 `
 
