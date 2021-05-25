@@ -25,6 +25,7 @@ export const ContactTitleContainer = styled.div`
 
   @media (max-width: 1000px) {
     align-items: center;
+    margin-top: 3.5rem;
   }
 
   h2 {
@@ -32,18 +33,25 @@ export const ContactTitleContainer = styled.div`
     font-size: 4rem;
     margin: 0;
     font-weight: bold;
+
+    @media (max-width: 1000px) {
+      font-size: 3rem;
+    }
   }
 `
 
 export const ContactFormContainer = styled.div`
   width: 50vw;
   padding: 3rem;
+
+  @media (max-width: 1000px) {
+    width: 100vw;
+    padding: 0rem 3rem;
+  }
 `
 
-export const ContactForm = styled.form`
-  width: 80%;
-`
+export const ContactForm = styled.form``
 
 export const ContactFormTextBox = styled(FormInput)`
-  height: 5rem;
+  max-height: 5rem;
 `

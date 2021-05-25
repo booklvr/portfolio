@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef, Fragment } from 'react'
-import ReactFullpage from '@fullpage/react-fullpage'
+import ReactFullpage, { fullpageApi } from '@fullpage/react-fullpage'
 
 // Components
 import Header from '../../components/header/Header'
@@ -8,9 +8,9 @@ import About from '../../components/about/About'
 import Projects from '../../components/projects/Projects'
 import Skills from '../../components/skills/Skills'
 import Contact from '../../components/contact/Contact'
+import FullPageNavigationOverlay from '../../components/fullScreenNavigationOverlay/FullScreenNavigationOverlay'
 import GifPage from '../gifPage/GifPage'
 import FullPageNavigation from '../../components/fullpage-navigation/FullPageNavigation'
-
 
 // DATA
 import projectData from '../../data/project-data'
@@ -19,6 +19,8 @@ import projectData from '../../data/project-data'
 // import { HomePageContainer } from './homePage.styles'
 
 const HomePage = () => {
+  const [showNavigation, setShowNavigation] = useState(false)
+
   const onLeave = (origin, destination, direction) => {
     console.log('Leaving section', origin.index)
     console.log('Leave direction', direction)
@@ -42,18 +44,15 @@ const HomePage = () => {
     // console.log('section', section)
   }
 
-  useEffect(() => {
-    projectData.forEach((project) => {
-      console.log(project.name)
-    })
-  }, [])
-
   return (
     <Fragment>
-      <SmallIcon icon='hamburger-menu' id='icon1'>
+      <SmallIcon
+        icon='hamburger-menu'
+        id='icon1'
+        onClick={() => setShowNavigation(!showNavigation)}
+      >
         <i className='fas fa-bars'></i>
       </SmallIcon>
-      {/* <FullPageNavigation/> */}
       <ReactFullpage
         //fullpage options
         licenseKey={'OPEN-SOURCE-GPLV3-LICENSE'}
@@ -70,6 +69,11 @@ const HomePage = () => {
         render={({ state, fullpageApi }) => {
           return (
             <ReactFullpage.Wrapper>
+              <FullPageNavigationOverlay
+                fullpageApi={fullpageApi}
+                showNavigation={showNavigation}
+                setShowNavigation={setShowNavigation}
+              />
               <div className='section' fullpageApi={fullpageApi}>
                 <Header fullpageApi={fullpageApi}></Header>
               </div>
@@ -101,6 +105,7 @@ const HomePage = () => {
           )
         }}
       />
+      )
     </Fragment>
   )
 }
