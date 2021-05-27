@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components'
+import styled from 'styled-components'
 import * as color from '../../styles/colors.styles'
 import * as font from '../../styles/fonts.styles.js'
 

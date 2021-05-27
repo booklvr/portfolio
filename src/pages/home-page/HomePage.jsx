@@ -1,5 +1,5 @@
-import React, { useEffect, useState, useRef, Fragment } from 'react'
-import ReactFullpage, { fullpageApi } from '@fullpage/react-fullpage'
+import React, { useState, Fragment } from 'react'
+import ReactFullpage from '@fullpage/react-fullpage'
 
 // Components
 import Header from '../../components/header/Header'
@@ -8,18 +8,18 @@ import About from '../../components/about/About'
 import Projects from '../../components/projects/Projects'
 import Skills from '../../components/skills/Skills'
 import Contact from '../../components/contact/Contact'
-import FullPageNavigationOverlay from '../../components/fullScreenNavigationOverlay/FullScreenNavigationOverlay'
 import GifPage from '../gifPage/GifPage'
-import FullPageNavigation from '../../components/fullpage-navigation/FullPageNavigation'
+import NavigationOverlay from '../../components/navigation-overlay/NavigationOverlay.jsx'
 
 // DATA
 import projectData from '../../data/project-data'
 
 // STYLES
-// import { HomePageContainer } from './homePage.styles'
+// import { ReactFullPageContainer } from './homePage.styles'
 
 const HomePage = () => {
   const [showNavigation, setShowNavigation] = useState(false)
+  const [activeSection, setActiveSection] = useState(0)
 
   const onLeave = (origin, destination, direction) => {
     console.log('Leaving section', origin.index)
@@ -32,10 +32,11 @@ const HomePage = () => {
   }
 
   const afterLoad = (origin, destination, direction) => {
-    // console.log('loaded section', destination.index)
-    // if (destination.anchor === 'projects') {
-    //   console.log('we have entered the projects section')
-    // }
+    console.log('loaded section', destination.index)
+    setActiveSection(destination.index)
+    if (destination.anchor === 'projects') {
+      console.log('we have entered the projects section')
+    }
   }
 
   const afterSlideLoad = (origin, destination, direction, section) => {
@@ -50,14 +51,16 @@ const HomePage = () => {
         icon='hamburger-menu'
         id='icon1'
         onClick={() => setShowNavigation(!showNavigation)}
+        activeSection={activeSection}
       >
         <i className='fas fa-bars'></i>
       </SmallIcon>
       <ReactFullpage
         //fullpage options
         licenseKey={'OPEN-SOURCE-GPLV3-LICENSE'}
-        scrollingSpeed={1000} /* Options here */
+        scrollingSpeed={700} /* Options here */
         anchors={['header', 'about', 'projects', 'skills', 'contact']}
+        menu='#myMenu'
         scrollOverflow={true}
         scrollOverflowReset={true}
         resetSliders={true}
@@ -66,42 +69,49 @@ const HomePage = () => {
         afterLoad={afterLoad}
         afterSlideLoad={afterSlideLoad}
         navigation={true}
+        slidesNavigation={true}
+        allowScrolling={false}
+        fixedElements={'#navigation-overlay'}
         render={({ state, fullpageApi }) => {
           return (
-            <ReactFullpage.Wrapper>
-              <FullPageNavigationOverlay
+            <Fragment>
+              <NavigationOverlay
+                id='navigation-overlay'
                 fullpageApi={fullpageApi}
                 showNavigation={showNavigation}
                 setShowNavigation={setShowNavigation}
+                activeSection={activeSection}
               />
-              <div className='section' fullpageApi={fullpageApi}>
-                <Header fullpageApi={fullpageApi}></Header>
-              </div>
-              <div className='section' fullpageApi={fullpageApi}>
-                <About fullpageApi={fullpageApi}></About>
-              </div>
-              <div className='section' fullpageApi={fullpageApi}>
-                <div className='slide' data-anchor='projects'>
-                  <Projects fullpageApi={fullpageApi} />
+              <ReactFullpage.Wrapper>
+                <div className='section' fullpageApi={fullpageApi} set>
+                  <Header fullpageApi={fullpageApi}></Header>
                 </div>
-
-                {projectData.map((project, index) => (
-                  <div
-                    key={index}
-                    className='slide'
-                    data-anchor={`slide${index + 3}`}
-                  >
-                    <GifPage project={project} />
+                <div className='section' fullpageApi={fullpageApi}>
+                  <About fullpageApi={fullpageApi}></About>
+                </div>
+                <div className='section' fullpageApi={fullpageApi}>
+                  <div className='slide' data-anchor='projects'>
+                    <Projects fullpageApi={fullpageApi} />
                   </div>
-                ))}
-              </div>
-              <div className='section' fullpageApi={fullpageApi}>
-                <Skills fullpageApi={fullpageApi}></Skills>
-              </div>
-              <div className='section'>
-                <Contact></Contact>
-              </div>
-            </ReactFullpage.Wrapper>
+
+                  {projectData.map((project, index) => (
+                    <div
+                      key={index}
+                      className='slide'
+                      data-anchor={`slide${index + 3}`}
+                    >
+                      <GifPage project={project} />
+                    </div>
+                  ))}
+                </div>
+                <div className='section' fullpageApi={fullpageApi}>
+                  <Skills fullpageApi={fullpageApi}></Skills>
+                </div>
+                <div className='section'>
+                  <Contact></Contact>
+                </div>
+              </ReactFullpage.Wrapper>
+            </Fragment>
           )
         }}
       />

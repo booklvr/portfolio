@@ -1,5 +1,6 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
+import ReactFullpage from '@fullpage/react-fullpage'
 
-export const HomePageContainer = styled.div`
+export const ReactFullPageContainer = styled(ReactFullpage)`
   position: relative;
 `

@@ -1,5 +1,4 @@
 import React from 'react'
-import { useHistory } from 'react-router-dom'
 import {
   GifPageContainer,
   GifButtonsContainer,
@@ -11,7 +10,6 @@ import './gifPlayer.styles.scss'
 
 // components
 import LargeIcon from '../../components/icons/LargeIcon'
-import projectData from '../../data/project-data'
 import CustomButton from '../../components/custom-button/CustomButton'
 
 const GifPage = ({ project }) => {

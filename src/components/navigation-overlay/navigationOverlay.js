@@ -2,13 +2,13 @@ import styled from 'styled-components'
 import * as color from '../../styles/colors.styles'
 import * as font from '../../styles/fonts.styles.js'
 
-export const FullScreenNavigationOverlayContainer = styled.div`
-  position: absolute;
-  top: 0;
-  right: 0;
+export const NavigationOverlayContainer = styled.div`
+  top: ${(props) => props.activeSection * 100}vh;
   width: 100vw;
   height: 100vh;
+  position: fixed;
   display: ${(props) => (props.showNavigation ? 'flex' : 'none')};
+  /* display: flex; */
   background-color: ${color.BLACK};
   z-index: 10000;
 `

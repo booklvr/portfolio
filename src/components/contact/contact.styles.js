@@ -50,7 +50,9 @@ export const ContactFormContainer = styled.div`
   }
 `
 
-export const ContactForm = styled.form``
+export const ContactForm = styled.form`
+  margin-right: 10rem;
+`
 
 export const ContactFormTextBox = styled(FormInput)`
   max-height: 5rem;

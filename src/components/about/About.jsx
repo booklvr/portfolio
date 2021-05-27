@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 
 import computerImage from '../../assets/computer.jpeg'
 import SmallIcon from '../icons/SmallIcon'

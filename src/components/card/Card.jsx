@@ -1,6 +1,5 @@
 import React, { Fragment } from 'react'
 
-import { useHistory, Link } from 'react-router-dom'
 import { useMediaQuery } from 'react-responsive'
 import CustomButton from '../custom-button/CustomButton'
 import SmallIcon from '../icons/SmallIcon'
@@ -23,20 +22,19 @@ const Card = ({
   fullpageApi,
   slideIndex,
 }) => {
-  const history = useHistory()
 
-  const isDesktopOrLaptop = useMediaQuery({
-    query: '(min-device-width: 1244px)',
-  })
-  const isBigScreen = useMediaQuery({ query: '(min-device-width: 1824px)' })
-  const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' })
-  const isTabletOrMobileDevice = useMediaQuery({
-    query: '(max-device-width: 1224px)',
-  })
+  // const isDesktopOrLaptop = useMediaQuery({
+  //   query: '(min-device-width: 1244px)',
+  // })
+  // const isBigScreen = useMediaQuery({ query: '(min-device-width: 1824px)' })
+  // const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' })
+  // const isTabletOrMobileDevice = useMediaQuery({
+  //   query: '(max-device-width: 1224px)',
+  // })
   const isMobile = useMediaQuery({
     query: '(max-device-width: 500px)',
   })
-  const isPortrait = useMediaQuery({ query: '(orientation: portrait)' })
+  // const isPortrait = useMediaQuery({ query: '(orientation: portrait)' })
 
   return (
     <CardContainer >
