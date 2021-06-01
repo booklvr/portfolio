@@ -20,14 +20,19 @@ const NavigationOverlay = ({
     setShowNavigation(false)
   }
 
-  useEffect(() => {
-    if (showNavigation) {
-      console.log('show navigation and prevent scrolling')
-      fullpageApi.setAllowScrolling(false)
-    } else {
-      fullpageApi.setAllowScrolling(true)
-    }
-  }, [showNavigation])
+  setTimeout(() => {
+    console.log(fullpageApi.version)
+  }, 1000)
+
+  // console.log(fullpageApi.version)
+
+  // fullpageApi.setAllowScrolling(false)
+
+  const setScrolling = () => {
+    // fullpageApi.setAllowScrolling(showNavigation)
+  }
+
+  // useEffect(() => {}, [showNavigation])
 
   return (
     <NavigationOverlayContainer
