@@ -3,7 +3,6 @@ import {
   GifPageContainer,
   GifButtonsContainer,
   GifPageLink,
-  
 } from './gifPage.styles'
 import GifPlayer from 'react-gif-player'
 import './gifPlayer.styles.scss'

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 
 import {
   NavigationOverlayContainer,
@@ -10,16 +10,12 @@ import LargeIcon from '../../components/icons/LargeIcon'
 
 const NavigationOverlay = ({
   showNavigation,
-  fullpageApi,
   setShowNavigation,
   activeSection,
 }) => {
   const navLinks = ['Home', 'About', 'Projects', 'Skills', 'Contact']
 
-  console.log('windowfullpage', window.fullpage_api)
-
   const handleClick = (index) => {
-    console.log('showNavigation', showNavigation)
     window.fullpage_api.silentMoveTo(index + 1)
     window.fullpage_api.setAllowScrolling(true)
     setShowNavigation(false)
@@ -29,10 +25,6 @@ const NavigationOverlay = ({
     setShowNavigation(false)
     window.fullpage_api.setAllowScrolling(true)
   }
-
-  useEffect(() => {
-    window.fullpage_api.setAllowScrolling(false)
-  }, [])
 
   return (
     <NavigationOverlayContainer

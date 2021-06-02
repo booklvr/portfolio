@@ -22,21 +22,21 @@ const HomePage = () => {
   const [activeSection, setActiveSection] = useState(0)
 
   const onLeave = (origin, destination, direction) => {
-    console.log('Leaving section', origin.index)
-    console.log('Leave direction', direction)
-    if (destination.anchor === 'projects') {
-      console.log('origin', origin)
-      console.log('destination', destination)
-      console.log('direction', direction)
-    }
+    // console.log('Leaving section', origin.index)
+    // console.log('Leave direction', direction)
+    // if (destination.anchor === 'projects') {
+    //   console.log('origin', origin)
+    //   console.log('destination', destination)
+    //   console.log('direction', direction)
+    // }
   }
 
   const afterLoad = (origin, destination, direction) => {
-    console.log('loaded section', destination.index)
+    // console.log('loaded section', destination.index)
     setActiveSection(destination.index)
-    if (destination.anchor === 'projects') {
-      console.log('we have entered the projects section')
-    }
+    // if (destination.anchor === 'projects') {
+    //   console.log('we have entered the projects section')
+    // }
   }
 
   const afterSlideLoad = (origin, destination, direction, section) => {
@@ -45,19 +45,19 @@ const HomePage = () => {
     // console.log('section', section)
   }
 
-  const fullpageOptions = {
-    licenseKey: 'OPEN-SOURCE_GPLV3-LICENSE',
-    scrollingSpeed: 700,
-    anchors: ['header', 'about', 'products', 'skills', 'contact'],
-    menu: '#myMenu',
-    scrollOverflow: true,
-    scrollOverflowReset: true,
-    resetSliders: true,
-    controlArrows: false,
-    navigation: true,
-    slidesNavigation: true,
-    allowScrolling: true,
-  }
+  // const fullpageOptions = {
+  //   licenseKey: 'OPEN-SOURCE_GPLV3-LICENSE',
+  //   scrollingSpeed: 700,
+  //   anchors: ['header', 'about', 'products', 'skills', 'contact'],
+  //   menu: '#myMenu',
+  //   scrollOverflow: true,
+  //   scrollOverflowReset: true,
+  //   resetSliders: true,
+  //   controlArrows: false,
+  //   navigation: true,
+  //   slidesNavigation: true,
+  //   allowScrolling: true,
+  // }
 
   return (
     <Fragment>
@@ -95,7 +95,6 @@ const HomePage = () => {
             <ReactFullpage.Wrapper>
               <NavigationOverlay
                 id='navigation-overlay'
-                fullpageapi={fullpageApi}
                 showNavigation={showNavigation}
                 setShowNavigation={setShowNavigation}
                 activeSection={activeSection}
