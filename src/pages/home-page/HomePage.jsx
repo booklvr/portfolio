@@ -64,8 +64,12 @@ const HomePage = () => {
       <SmallIcon
         icon='hamburger-menu'
         id='icon1'
-        onClick={() => setShowNavigation(!showNavigation)}
+        onClick={() => {
+          setShowNavigation(!showNavigation)
+          window.fullpage_api.setAllowScrolling(false)
+        }}
         activeSection={activeSection}
+        showNavigation={showNavigation}
       >
         <i className='fas fa-bars'></i>
       </SmallIcon>
@@ -91,7 +95,7 @@ const HomePage = () => {
             <ReactFullpage.Wrapper>
               <NavigationOverlay
                 id='navigation-overlay'
-                fullpageApi={fullpageApi}
+                fullpageapi={fullpageApi}
                 showNavigation={showNavigation}
                 setShowNavigation={setShowNavigation}
                 activeSection={activeSection}

@@ -6,6 +6,8 @@ import {
   NavigationListItem,
 } from './navigationOverlay'
 
+import LargeIcon from '../../components/icons/LargeIcon'
+
 const NavigationOverlay = ({
   showNavigation,
   fullpageApi,
@@ -14,31 +16,32 @@ const NavigationOverlay = ({
 }) => {
   const navLinks = ['Home', 'About', 'Projects', 'Skills', 'Contact']
 
+  console.log('windowfullpage', window.fullpage_api)
+
   const handleClick = (index) => {
-    fullpageApi.silentMoveTo(index + 1)
-    fullpageApi.setAllowScrolling(true)
+    console.log('showNavigation', showNavigation)
+    window.fullpage_api.silentMoveTo(index + 1)
+    window.fullpage_api.setAllowScrolling(true)
     setShowNavigation(false)
   }
 
-  setTimeout(() => {
-    console.log(fullpageApi.version)
-  }, 1000)
-
-  // console.log(fullpageApi.version)
-
-  // fullpageApi.setAllowScrolling(false)
-
-  const setScrolling = () => {
-    // fullpageApi.setAllowScrolling(showNavigation)
+  const handleExit = () => {
+    setShowNavigation(false)
+    window.fullpage_api.setAllowScrolling(true)
   }
 
-  // useEffect(() => {}, [showNavigation])
+  useEffect(() => {
+    window.fullpage_api.setAllowScrolling(false)
+  }, [])
 
   return (
     <NavigationOverlayContainer
       showNavigation={showNavigation}
       activeSection={activeSection}
     >
+      <LargeIcon icon='exit' onClick={handleExit}>
+        <i className='fas fa-times'></i>
+      </LargeIcon>
       <NavigationList id='#myMenu'>
         {navLinks.map((link, index) => (
           <NavigationListItem

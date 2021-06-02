@@ -22,6 +22,7 @@ const hamburgerMenuStyles = css`
   position: fixed;
   top: 10px;
   right: 10px;
+  display: ${(props) => props.showNavigation && 'none'};
   i {
     color: ${(props) =>
       props.activeSection === 2 ? color.BLACK : color.WHITE};
